@@ -65,17 +65,9 @@ public class HieblDavid_GCD {
      * gcd nach Eucleanischen Algorithmus
      */
     public static int gcdEuclean(int a, int b){
-        if (a == 0) {
-            return b;
+        if (b == 0) {
+            return a;
         }
-        while (b != 0) {            
-            if (a > b) {
-                a = a - b;
-            }
-            else{
-                b = b - a;
-            }
-        }
-        return a;
+        return gcdEuclean(b, a % b);
     }
 }
